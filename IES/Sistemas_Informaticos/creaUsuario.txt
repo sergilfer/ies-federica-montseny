@@ -1,0 +1,6 @@
+1. Crea un usuario
+- Creamos el usuario: sudo useradd -m -s /bin/bash <nombre de usuario>
+- Abrimos el fichero: sudo vim /etc/passwd
+- Luego ponemos: sudo passwd prueba (e introducimos la contraseña)
+
+2.  

@@ -1,0 +1,39 @@
+- crear estructuras de datos:
+md <nombre>
+
+- acceder dentro de un directorio
+cd <nombre dir>
+
+- formas de borrar "ejercici"
+rd/s
+deltree <ejercici>
+
+- crear desde raiz un "texto" cuyo contenido sea copy
+help copy > ..\..\TEXTO
+
+- crear 3 ficheros "texto.txt","texto.dak","texto1.bas" ordenes cd,rd y md
+cd/? > texto.txt
+rd/? > texto.bak
+md/? > texto1.bas
+
+- renombrar un archivo
+ren <nombre original> <nombre nuevo>
+
+- borrar todos los archivos cuya primera letra sea b.
+del *.b*
+
+- crear fichero que contendra primera linea nombre, segunda edad, tercera ciudad
+copy con <nombre>
+sergio
+25
+mostoles
+ctrl+z
+
+-buscar un nombre con el comando find
+FIND "SERGIO" <nombre archivo>
+
+- formas de borrar un directorio
+deltree <nombre>
+DEL *.* cd .. RD <nombre>
+rd/s
+

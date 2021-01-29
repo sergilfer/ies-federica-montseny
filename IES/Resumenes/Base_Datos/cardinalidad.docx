@@ -1,0 +1,15 @@
+- Cardinalidad:
+
+-- cardinalidad minima: nº minimo de asociaciones en las que aparece cada ejemplar de la entidad (0 o 1)
+
+-- cardinalidad maxima: nº maximo de relaciones en las que aparece cada ejemplar en la entidad (1 o n)
+
+tipos: 
+
+1:1 = uno a uno, la cardinalidad maxima es 1 en ambas direcciones.
+1:N = uno a muchos, en una direccion es 1 y en la otra muchos
+N:M = muchos a muchos, en ambas direcciones es muchos.
+
+- Unidad 3. Modelo conceptual.
+
+

@@ -1,0 +1,51 @@
+1. Crear la siguiente estructura de datos:
+md RepasoEntornos
+cd RepasoEntornos
+
+md Unidad0
+md Unidad1
+md Unidad2
+
+cd Unidad0
+md ejercicios
+md repaso
+md teoria
+
+2. Desde `RepasoEntornos', crea en el directorio ‘Unidad1’, los directorios ‘ejercicios’, ‘repaso’ y ‘teoria’.
+cd Unidad1
+md ejercicios
+md repaso
+md teoria
+
+3. Desde `RepasoEntornos', crea en el directorio ‘teoria’ de la ‘Unidad1’, el fichero ‘helpDir.txt’ cuyo contenido sea la ayuda de la orden dir.
+cd Unidad1/teoria
+TYPE dir/? >> helpDir.txt
+
+4. Desde ‘Unidad0’, crea en el directorio ejercicios del mismo, el fichero ‘helpPing.txt’ cuyo contenido sea la ayuda de la orden ping.
+TYPE ping/? >> helpPing.txt
+
+5. Renombrar el fichero de la Unidad0 `helpPing.txt' por ‘ejercicio1.txt’.
+ren helpPing.txt ejercicio1.txt
+
+6. Crea un nuevo directorio ‘test’ dentro de la ‘Unidad0’, desde el directorio ‘Unidad1’.
+md ..\Unidad0
+
+7. Cambia el nombre del directorio `test' por el de `notas'.
+ren test notas
+
+8. Mueve el fichero ‘ejercicio1.txt’ desde la carpeta ‘ejercicios’ hasta la carpeta ‘notas’ de la carpeta ‘Unidad0’.
+move ejercicio1.txt C:\RepasoEntornos\Unidad0\notas
+
+9. Borra todos los archivos del directorio ‘notas’ de la ‘Unidad0’, cuya extensión sea ‘.txt’.
+rm *.txt*
+
+10.Busca con el comando find el texto ‘archivos’ omitiendo mayúsculas/minúsculas en el fichero ‘helpDir.txt’.
+FIND "archivos" helpDir.txt
+
+11.Busca con el comando find el texto ‘archivos’ sin omitir mayúsculas/minúsculas en el fichero ‘helpDir.txt’.
+FIND 
+12.Busca con el comando find el texto ‘Archivos’’ sin omitir mayúsculas/minúsculas en el fichero ‘helpDir.txt’.
+
+13.Borra el directorio `notas’ creado en el punto 7.
+
+14.Borra el directorio Unidad0 y todos sus subdirectorios y contenido desde ‘RepasoEntornos’.

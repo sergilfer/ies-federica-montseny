@@ -1,0 +1,49 @@
+- crear directorios
+md <nombre>
+
+- acceder a carpeta
+cd <nombre>
+
+- generar ficheros txt
+copy con <fichero.txt>
+
+- situarse en una direccion "programas"
+cd ..\..\programas
+cd C:\principal\programas
+cd .. 
+cd programas
+
+- limpiar la pantalla 
+cls
+
+- visualizar una ayuda
+<nombre>/?
+
+- lista contenido de un directorio alfabeticamente
+DIR/Oge
+
+- listar el contenido de un directorio ordenador por tamaño
+DIR/Ogs /S
+
+- listar el contenido de una pagina de forma paginada
+DIR/Ogs /S /P
+
+- mover un texto
+move <nombre> <direccion>
+
+- visualizar el contenido 
+type <nombre>
+
+-visualizar ayuda 
+<nombre>/?
+
+- como formatear un usb
+FORMAT F:
+
+- borrar un directorio 
+rm <nombre>
+
+- añadir el contenido de un texto en otro texto
+TYPE <nombre origen> >> <nombre destino>
+
+

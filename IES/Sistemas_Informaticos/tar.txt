@@ -1,0 +1,14 @@
+1. tar cvf Documents.tar Documentos/
+
+2. tar cvfz downloads.tar.gz Descargas
+
+3. tar cvfj dowloads.tar.bz2 Descargas
+
+4. tar xvf Documents.tar -C Copia_Documentos
+
+5. tar xvfz downloads.tar.gz -C Copia_Descarga1 
+
+6. tar xvfj downloads.tar.bz2 -C Copia_Descarga2
+
+La z y la j no hacen falta a la hora de descomprimir el archivo, ya que lo 
+detecta solo y descomprime igualmente

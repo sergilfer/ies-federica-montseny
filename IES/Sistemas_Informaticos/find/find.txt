@@ -1,0 +1,8 @@
+6. -atime -2 para que sean 2 dias restantes. 
+
+7. sudo find / -size + 100M
+
+8. sudo find . -size -1M lo del punto es para indicar que es el directorio actual
+
+9. sudo find . -type l
+
