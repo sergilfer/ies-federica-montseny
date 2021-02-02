@@ -30,8 +30,27 @@ public class Company implements ICompany{
         }
         return result;
     }
+    private Employee getHeads (String position , Employee [] employees){
+        Employee result = null;
+        boolean found = false;
+        for (int i = 0 ;  i < employees.length; i++){
+            Employee employee = employees[i];
+            if (employee!= null){
+                if (employee.getPosition().equals(position)){
+                    result = employee;
+                    found = true;
+                }
+            }
+            if (!found){
+                System.out.println("no se ha encontrado el empleado");
+            }
+        }
+        return result;
+    }
     //-------------------------- METODOS PUBLICOS -----------------------------------//
 
+
+    //Muestra los nombres de los departamentos de la empresa
     @Override
     public void showNameOfDepartments() {
         for (int i = 0 ; i < departments.length; i++){
@@ -39,6 +58,7 @@ public class Company implements ICompany{
         }
     }
 
+    // Devuelve los empleados de un departamento
     @Override
     public Employee[] getEmployeesDepartment(String departmentName) {
         Department department = findDepartment(departmentName);
@@ -51,6 +71,7 @@ public class Company implements ICompany{
         return employees;
     }
 
+    //Muestra los empleados de un departamento
     @Override
     public void showEmployeesDepartment(String departmentName) {
         Employee[] employees = getEmployeesDepartment(departmentName);
@@ -61,6 +82,7 @@ public class Company implements ICompany{
         }
     }
 
+    //Muestra todos los empleados de una empresa
     @Override
     public void showAllEmployees() {
         for (int i = 0 ; i < departments.length;i++){
@@ -69,21 +91,31 @@ public class Company implements ICompany{
         }
     }
 
+    //Muestra todos los directores de departamento
     @Override
     public void showAllDepartmentHeads(String position) {
         for (int i = 0 ; i < departments.length; i++){
             Department department = departments[i];
-            department.getHeads(position);
+            department.printHeads(position);
         }
     }
 
+    //Devuelve el director de un departamento dado
     @Override
-    public void getDirectorDepartment(String departmentName, String position) {
+    public Employee getDirectorDepartment(String departmentName, String position) {
+        Employee [] arrayEmployees = getEmployeesDepartment(departmentName);
+        Employee employee = getHeads(position,arrayEmployees);
+        return employee;
     }
 
+    //Devuelve todos los directores de departamento
     @Override
-    public void getAllDepartmentHeads(String position) {
-
+    public Employee[] getAllDepartmentHeads(String position) {
+        Employee [] employees = new Employee[departments.length];
+        for (int i = 0 ; i < departments.length;i++){
+            employees[i] = getDirectorDepartment(departments[i].getName(), position);
+        }
+        return employees;
     }
     //-------------- GETTERS, SETTERS, HASHCODDE, EQUALS --------------//
     public String getName() {

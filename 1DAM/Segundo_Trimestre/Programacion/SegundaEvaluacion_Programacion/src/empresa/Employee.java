@@ -4,13 +4,15 @@ import java.util.Objects;
 
 public class Employee {
     String name, surnames, nif, position;
+    private int cp;
 
     //-------------------------- CONSTRUCTOR -----------------------------------//
-    public Employee(String name, String surnames, String nif, String position) {
+    public Employee(String name, String surnames, String nif, String position, int cp) {
         this.name = name;
         this.surnames = surnames;
         this.nif = nif;
         this.position = position;
+        this.cp = cp;
     }
     //-------------------------- METODOS PUBLICOS -----------------------------------//
 
@@ -53,12 +55,21 @@ public class Employee {
         this.position = position;
     }
 
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(name, employee.name) &&
+        return cp == employee.cp &&
+                Objects.equals(name, employee.name) &&
                 Objects.equals(surnames, employee.surnames) &&
                 Objects.equals(nif, employee.nif) &&
                 Objects.equals(position, employee.position);
@@ -66,7 +77,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surnames, nif, position);
+        return Objects.hash(name, surnames, nif, position, cp);
     }
-
 }
+

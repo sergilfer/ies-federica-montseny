@@ -16,17 +16,22 @@ public class Department {
     //-------------------------- METODOS PRIVADOS -----------------------------------//
 
     //-------------------------- METODOS PUBLICOS -----------------------------------//
+
+    //imprime los nombres de todos los departamentos
     public void nameDepartment() {
         System.out.println("el nombre del departamento es: " + name);
     }
 
+    //imprime la informacion de los empleados
     public void printInfoEmployee() {
         for (int i = 0 ; i < employees.length; i++){
             Employee employee = employees[i];
             employee.info();
         }
     }
-    public void getHeads(String position) {
+
+    //devuelve la informacion de una posicion especifica
+    public void printHeads(String position) {
         for (int i = 0 ; i < employees.length; i++){
             Employee employee = employees[i];
             if (employee.getPosition().equals(position)){
@@ -34,6 +39,7 @@ public class Department {
             }
         }
     }
+
     //-------------- GETTERS, SETTERS, HASHCODDE, EQUALS --------------//
     public String getName() {
         return name;
@@ -66,6 +72,4 @@ public class Department {
         result = 31 * result + Arrays.hashCode(employees);
         return result;
     }
-
-
 }

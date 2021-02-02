@@ -6,6 +6,6 @@ public interface ICompany {
     void showEmployeesDepartment(String departmentName);
     void showAllEmployees();
     void showAllDepartmentHeads(String position);
-    void getDirectorDepartment(String departmentName, String position);
-    void getAllDepartmentHeads(String position);
+    Employee getDirectorDepartment(String departmentName, String position);
+    Employee[] getAllDepartmentHeads(String position);
 }
