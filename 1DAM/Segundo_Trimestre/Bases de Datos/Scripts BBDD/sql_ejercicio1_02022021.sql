@@ -31,8 +31,8 @@ DESCRIBE empleados;
 /* DROP TABLE empleados sirve para eliminar */
 
 /* cambia el nombre de la tabla */
- /*ALTER TABLE empleados 
-RENAME TO employees;*/
+ ALTER TABLE empleados 
+RENAME TO employees;
 
 /* CUIDADO: borra los datos de la tabla, por eso esta comentado */
 /* TRUNCATE TABLE employees; */ 
@@ -52,7 +52,7 @@ departamento BIT
 DESCRIBE employees;
 
 /* en este caso modificamos la tabla, pero para eliminar una columna */
-ALTER TABLE employees DROP jefe;
+ ALTER TABLE employees DROP jefe; 
 
 ALTER TABLE employees ADD (
 boss VARCHAR(2)
@@ -60,5 +60,34 @@ boss VARCHAR(2)
 
 /* en este caso modificamos una columna que ya esta en la tabla anteriormente */
 ALTER TABLE employees MODIFY boss VARCHAR(20);
+
+DROP TABLE tasks; 
+
+CREATE TABLE tasks (
+id INT NOT NULL,
+title VARCHAR(255) NOT NULL,
+start_date DATE UNIQUE,
+end_date DATE,
+UNIQUE (end_date, title),
+price INT CHECK (price > 0)
+);
+
+/* price INT CHECK (price > 0) es igual a poner 
+CONSTRAINT tasks_price_chk CHECK (price > 0) */
+
+/* con el de abajo seleccionas tu el nombre que tiene la restriccion, en la primera te lo
+elige automaticamente SQL el nombre */
+
+/* DDL de una tabla */
+SHOW CREATE TABLE employees;
+
+/* listado de tablas */
+SHOW TABLES;
+
+/* para añadir un unique a algo que no lo tenia previamente */
+ALTER TABLE tasks
+ADD CONSTRAINT tas_tit_uk
+UNIQUE (title);
+
 
 
