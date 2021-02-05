@@ -89,5 +89,26 @@ ALTER TABLE tasks
 ADD CONSTRAINT tas_tit_uk
 UNIQUE (title);
 
+/* eliminamos la tabla para crearla de nuevo con un id */ 
+DROP TABLE IF EXISTS employees;
+
+show indexes from employees;
+
+show create table employees;
+
+/* creamos un tabla nueva con indice INDEX */
+CREATE TABLE IF NOT EXISTS employees (
+id INT,
+name_employee VARCHAR(30),
+age INT,
+INDEX(id)
+);
+
+/* para eliminar un indice */
+DROP INDEX id ON employees;
+
+/* para crear un indice si la tabla ya esta creada */
+CREATE INDEX IDX_id ON employees (id);
+
 
 
