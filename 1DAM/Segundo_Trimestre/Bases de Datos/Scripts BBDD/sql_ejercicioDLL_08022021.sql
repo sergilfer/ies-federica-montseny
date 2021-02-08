@@ -95,3 +95,5 @@ ADD CONSTRAINT PK_cities PRIMARY KEY (cod_localidad);
 /* pub_empleado */
 ALTER TABLE stonks
 ADD CONSTRAINT PK_pub_empleado PRIMARY KEY (cod_pub, dni_empleado, funcion);
+
+/* 5. Añade las siguientes restricciones: */ 
