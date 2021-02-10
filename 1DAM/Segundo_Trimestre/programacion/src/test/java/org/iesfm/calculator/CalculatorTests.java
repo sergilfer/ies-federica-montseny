@@ -9,7 +9,7 @@ public class CalculatorTests {
 
     private final static double DELTA = 0.000001;
     @Test
-    public void sumPositiveNumbersTest() {
+    public void sumNumbersTest() {
         //Configuracion del escenario
         double a = 2;
         double b = 5;
@@ -22,7 +22,7 @@ public class CalculatorTests {
     }
 
     @Test
-    public void sumNegativeNumbersTest() {
+    public void substratcNumbersTest() {
         //Configuracion del escenario
         double a = 2;
         double b = 5;
@@ -34,7 +34,7 @@ public class CalculatorTests {
         Assert.assertEquals(-3,res,DELTA);
     }
     @Test
-    public void sumDivNumbersTest() {
+    public void divNumbersTest() {
         //Configuracion del escenario
         double a = 2;
         double b = 5;
@@ -46,7 +46,7 @@ public class CalculatorTests {
         Assert.assertEquals(0.4,res,DELTA);
     }
     @Test
-    public void sumMultiplyNumbersTest() {
+    public void multiplyNumbersTest() {
         //Configuracion del escenario
         double a = 2;
         double b = 5;
@@ -58,9 +58,10 @@ public class CalculatorTests {
         Assert.assertEquals(10,res,DELTA);
     }
     @Test
-    public void sumNegNumbersTest() {
+    public void negNumbersTest() {
         //Configuracion del escenario
         double a = 2;
+
         //Ejecucion del test
         double res = calculator.neg(a);
 
