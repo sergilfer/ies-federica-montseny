@@ -97,3 +97,65 @@ ALTER TABLE stonks
 ADD CONSTRAINT PK_pub_empleado PRIMARY KEY (cod_pub, dni_empleado, funcion);
 
 /* 5. Añade las siguientes restricciones: */ 
+
+/*a. Tabla PUB: NOT NULL para los campos FECHA APERTURA y HORARIO*/
+ALTER TABLE pub MODIFY fecha_apertura DATE NOT NULL;
+ALTER TABLE pub MODIFY horario VARCHAR(20) NOT NULL;
+
+/* b. Tabla EMPLEADO: NOT NULL para el campo PROVINCIA */
+ALTER TABLE cities MODIFY province VARCHAR (20) NOT NULL;
+
+/* c. Tabla EXISTENCIAS: CHECK campo precio > 0 */
+ALTER TABLE stocks ADD CONSTRAINT CHK_price CHECK (price > 0);
+
+/* d. Tabla EXISTENCIAS: DEFAULT campo precio = 1*/ 
+ALTER TABLE stocks ALTER price SET DEFAULT 1;
+
+/* e. Tabla TITULAR: INDEX para los campos DNI_TITULAR y NOMBRE */ 
+CREATE INDEX owners ON owners (dni_titular, nombre);
+
+/*  f. Tabla EXISTENCIAS: DEFAULT = 1 para el campo CANTIDAD */
+ALTER TABLE stocks ALTER quantity SET DEFAULT 1;
+
+/* g. Tabla LOCALIDAD: INDEX para los campos COD_LOCALIDAD y NOMBRE. */
+CREATE INDEX cities ON cities (cod_localidad, nombre_localidad);
+
+/*6. Elimina las siguientes relaciones: */ 
+
+/*a. Tabla TITULAR: INDEX para los campos DNI_TITULAR y NOMBRE*/
+ALTER TABLE owners DROP INDEX idx_titular;
+
+/* b. Tabla EXISTENCIAS: DEFAULT = 1 para el campo CANTIDAD*/
+ALTER TABLE stocks ALTER cantidad DROP DEFAULT;
+
+/*c. Tabla LOCALIDAD: INDEX para los campos COD_LOCALIDAD y NOMBRE*/
+
+ALTER TABLE cities DROP INDEX idx_localidad;
+
+/* d. Tabla EXISTENCIAS: CHECK (precio > 0)*/
+ALTER TABLE stocks DROP CHECK  CHK_stocks;
+
+/*e. Tabla EXISTENCIAS: DEFAULT = 1 para el campo PRECIO*/ 
+ALTER TABLE stocks ALTER precio DROP DEFAULT;
+
+/* 7. Crea las siguientes claves ajenas a las tablas ya existentes */ 
+
+/*a. Tabla Titular con el campo COD_PUB a pubs */ 
+ALTER TABLE owners ADD CONSTRAINT fk_cod_pub_own FOREIGN KEY (cod_pub)
+REFERENCES pubs (cod_pub);
+
+ALTER TABLE pub_employees ADD CONSTRAINT fk_cod_pub_employees FOREIGN KEY (cod_pub)
+REFERENCES pubs (cod_pub);
+
+ALTER TABLE owners ADD CONSTRAINT fk_cod_pub_own FOREIGN KEY (cod_pub)
+REFERENCES pubs (cod_pub);
+
+ALTER TABLE owners ADD CONSTRAINT fk_cod_pub_own FOREIGN KEY (cod_pub)
+REFERENCES pubs (cod_pub);
+
+ALTER TABLE owners ADD CONSTRAINT fk_cod_pub_own FOREIGN KEY (cod_pub)
+REFERENCES pubs (cod_pub);
+/* 8. Eliminar las claves ajenas credas en el ejercicio anterior */ 
+
+/* 9. Elimina y crea de nuevo las tablas TITULAR, PUB Y PUB_EMPLEADO. añadiendo las claves
+primarias y ajenas, en la definicion de cada una, mediante el comando CREATE TABLE */
