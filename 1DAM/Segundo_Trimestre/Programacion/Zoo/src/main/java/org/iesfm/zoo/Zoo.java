@@ -8,19 +8,6 @@ public class Zoo implements IZoo{
         this.name = name;
         this.animals = animals;
     }
-private Animal foundAnimalCage (int numberCage) throws CageNotFoundException {
-        Animal result = null;
-        for (int i = 0 ; i < animals.length; i++){
-            Animal animal = animals[i];
-            if (animal.getCage() == numberCage){
-                result = animal;
-            }
-        }
-        if (result == null){
-            throw new CageNotFoundException(numberCage);
-        }
-        return result;
-}
 
     public int getNumberAnimalsCage(int numberCage) {
         int cont = 0 ;
@@ -28,6 +15,9 @@ private Animal foundAnimalCage (int numberCage) throws CageNotFoundException {
             if (animals[i].getCage() == numberCage){
                 cont++;
             }
+        }
+        if (cont == 0){
+            throw new CageNotFoundException(numberCage);
         }
         return cont;
     }
@@ -39,16 +29,22 @@ private Animal foundAnimalCage (int numberCage) throws CageNotFoundException {
                 cont++;
             }
         }
+        if (cont == 0){
+            throw new FeedingNotFoundException(feeding);
+        }
         return cont;
     }
 
-    public int getNumberAnimalsSpecie(String species, int cage) {
+    public int getNumberAnimalsSpecie(String species, int numberCage) {
         int cont = 0 ;
         for (int i = 0 ; i < animals.length; i++){
             if (animals[i].getSpecie().equals(species) &&
-                    animals[i].getCage() == cage){
+                    animals[i].getCage() == numberCage){
                 cont++;
             }
+        }
+        if (cont == 0){
+            throw new CageNotFoundException(numberCage);
         }
         return cont;
     }
